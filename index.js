@@ -179,6 +179,20 @@ window.onload = function () {
         [0 * IDR, 0.05],
     ];
 
+    //http://www.taxsummaries.pwc.com/ID/Argentina-Individual-Taxes-on-personal-income
+    //Based on the numbers it seems that this is based on some sort of "minimal income" or similar
+    var ar = [
+        [412064 * ARS, 0.35],
+        [309048 * ARS, 0.31],
+        [206032 * ARS, 0.27],
+        [154524 * ARS, 0.23],
+        [103016 * ARS, 0.19],
+        [77262 * ARS, 0.15],
+        [51508 * ARS, 0.12],
+        [25754 * ARS, 0.09],
+        [0 * ARS, 0.05],
+    ];
+
     var from = parseInt(params['f']) || 0;
     var to = parseInt(params['t']) || 100000;
     var step = (to - from) / 50;
@@ -307,6 +321,15 @@ window.onload = function () {
                 return tax(x, id);
             },
             borderColor: "#DDD907",
+            data: [],
+            fill: false
+        },
+        {
+            label: "Argentina",
+            function: function (x) {
+                return tax(x, ar);
+            },
+            borderColor: "#DC92D5",
             data: [],
             fill: false
         }]
