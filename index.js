@@ -160,6 +160,17 @@ window.onload = function () {
         [20000 * SGD, 0.020]
     ];
 
+    //http://taxsummaries.pwc.com/ID/Thailand-Individual-Taxes-on-personal-income
+    var th = [
+        [5000000 * THB, 0.35],
+        [2000000 * THB, 0.30],
+        [1000000 * THB, 0.25],
+        [750000 * THB, 0.20],
+        [500000 * THB, 0.15],
+        [300000 * THB, 0.10],
+        [150000 * THB, 0.05]
+    ];
+
     var from = parseInt(params['f']) || 0;
     var to = parseInt(params['t']) || 100000;
     var step = (to - from) / 50;
@@ -270,6 +281,15 @@ window.onload = function () {
                 return t - Math.min(t * 0.2, 500 / SGD);
             },
             borderColor: "#E932EA",
+            data: [],
+            fill: false
+        },
+        {
+            label: "Thailand",
+            function: function (x) {
+                return tax(x, th);
+            },
+            borderColor: "#D7D88F",
             data: [],
             fill: false
         }]
