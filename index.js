@@ -5,6 +5,8 @@ var UYU = 1 / 31.13; var UY_BPC = 3848 * UYU;
 var CAD = 0.78;
 var EUR = 1.18;
 var HKD = 1 / 7.85;
+var SGD = 0.75;
+var CHF = 1.00;
 
 function parseQueryString(queryString) {
     var params = {};
@@ -88,7 +90,6 @@ window.onload = function () {
     ];
 
     //http://taxsummaries.pwc.com/uk/taxsummaries/wwts.nsf/ID/Switzerland-Individual-Taxes-on-personal-income
-    var CHF = 1.00;
     var ch = [
         [895800 * CHF, 0.115],
         [145000 * CHF, 0.13],
@@ -141,6 +142,19 @@ window.onload = function () {
         [33994 * EUR, 0.4085],
         [20142 * EUR, 0.132 + 0.2765],
         [0 * EUR, 0.089 + 0.2765]
+    ];
+
+    var sg = [
+        [320000 * SGD, 0.22],
+        [280000 * SGD, 0.20],
+        [240000 * SGD, 0.195],
+        [200000 * SGD, 0.190],
+        [160000 * SGD, 0.180],
+        [120000 * SGD, 0.150],
+        [80000 * SGD, 0.115],
+        [40000 * SGD, 0.070],
+        [30000 * SGD, 0.035],
+        [20000 * SGD, 0.020]
     ];
 
     var from = parseInt(params['f']) || 0;
@@ -243,6 +257,15 @@ window.onload = function () {
                 return tax(x, hk);
             },
             borderColor: "#78324A",
+            data: [],
+            fill: false
+        },
+        {
+            label: "Singapore",
+            function: function (x) {
+                return tax(x, sg);
+            },
+            borderColor: "#E932EA",
             data: [],
             fill: false
         }]
