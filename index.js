@@ -5,6 +5,30 @@ var UYU = 1 / 31.13; var UY_BPC = 3848 * UYU;
 var CAD = 0.78;
 var EUR = 1.18;
 
+function parseQueryString(queryString) {
+    var params = {};
+    for (var i = 0, l = queries.length; i < queries.length; i++) {
+        var temp = queries[i].split('=');
+        params[temp[0]] = temp[1];
+    }
+    return params;
+}
+
+function tax(x, brakes) {
+    var t = 0;
+    var s = x;
+    for (var i = 0; i < brakes.length; i++) {
+        var br = brakes[i];
+        if (s > br[0]) {
+            t += (s - br[0]) * br[1];
+            s = br[0];
+        }
+    }
+    return t;
+}
+
+var params = parseQueryString(window.location.search.substring(1));
+
 window.onload = function () {
     var nz = [
         [70000 * NZD, 0.330],
@@ -49,13 +73,6 @@ window.onload = function () {
         [0 * CAD, 0.15],
     ];
 
-    /*
-    5.05% on the first $42,960 of taxable income, +
-    9.15% on the next $42,963, +
-    11.16% on the next $64,077, +
-    12.16% on the next $70,000, +
-    13.16 % on the amount over $220,000
-    */
     var ca_ontario = [
         [220000 * CAD, 0.1316],
         [150000 * CAD, 0.1216],
@@ -98,21 +115,12 @@ window.onload = function () {
         [13500 * CHF, 0.02]
     ];
 
-    function tax(x, brakes) {
-        var t = 0;
-        var s = x;
-        for (var i = 0; i < brakes.length; i++) {
-            var br = brakes[i];
-            if (s > br[0]) {
-                t += (s - br[0]) * br[1];
-                s = br[0];
-            }
-        }
-        return Math.round(t * 100) / 100;
-    }
+    var from = parseInt(params['f']) || 0;
+    var to = parseInt(params['t']) || 100000;
+    var step = parseInt(params['s']) || 2000;
 
     var labels = [];
-    for (var l = 0; l < 100000; l += 2000) {
+    for (var l = from; l < to; l += step) {
         labels.push(l);
     }
 
