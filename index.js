@@ -24,13 +24,13 @@ window.onload = function () {
     ];
     //http://ahorrar.com.uy/finanzas/impuestos/franjas-del-irpf-2018-en-uruguay/
     var uy = [
-        [442465 * UYU, 0.36],
-        [288564 * UYU, 0.31],
-        [192376 * UYU, 0.27],
-        [115426 * UYU, 0.25],
-        [57713 * UYU, 0.24],
-        [38475 * UYU, 0.15],
-        [26933 * UYU, 0.10],
+        [442465 * 12 * UYU, 0.36],
+        [288564 * 12 * UYU, 0.31],
+        [192376 * 12 * UYU, 0.27],
+        [115426 * 12 * UYU, 0.25],
+        [57713 * 12 * UYU, 0.24],
+        [38475 * 12 * UYU, 0.15],
+        [26933 * 12 * UYU, 0.10],
     ];
 
     var au = [
