@@ -4,6 +4,7 @@ var CLP = 1 / 631.19; var CL_UTA = 570456 * CLP;
 var UYU = 1 / 31.13; var UY_BPC = 3848 * UYU;
 var CAD = 0.78;
 var EUR = 1.18;
+var HKD = 1 / 7.85;
 
 function parseQueryString(queryString) {
     var params = {};
@@ -125,6 +126,15 @@ window.onload = function () {
         [0 * EUR, 0.2]
     ];
 
+    //https://www.gov.hk/en/residents/taxes/taxfiling/taxrates/salariesrates.htm
+    var hk = [
+        [200000 * HKD, 0.17],
+        [150000 * HKD, 0.14],
+        [100000 * HKD, 0.10],
+        [50000 * HKD, 0.06],
+        [0 * HKD, 0.02]
+    ];
+
     //https://nl.wikipedia.org/wiki/Box_1#Schijventarief_2018
     var nl = [
         [68507 * EUR, 0.5195],
@@ -224,6 +234,15 @@ window.onload = function () {
                 return tax(x - exemption * EUR, ee);
             },
             borderColor: "black",
+            data: [],
+            fill: false
+        },
+        {
+            label: "Hong Kong",
+            function: function (x) {
+                return tax(x, hk);
+            },
+            borderColor: "#78324A",
             data: [],
             fill: false
         }]
