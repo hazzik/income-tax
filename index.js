@@ -3,6 +3,7 @@ var AUD = 0.75;
 var CLP = 1 / 631.19; var CLP_UTA = 570456 * CLP;
 var UYU = 1 / 31.13;
 var CAD = 0.78;
+var EUR = 1.18;
 
 window.onload = function () {
     var nz = [
@@ -21,15 +22,15 @@ window.onload = function () {
         [30 * CLP_UTA, 0.080],
         [13.5 * CLP_UTA, 0.040]
     ];
-    //http://taxsummaries.pwc.com/uk/taxsummaries/wwts.nsf/ID/Uruguay-Individual-Taxes-on-personal-income
+    //http://ahorrar.com.uy/finanzas/impuestos/franjas-del-irpf-2018-en-uruguay/
     var uy = [
-        [4983180 * UYU, 0.36],
-        [3249900 * UYU, 0.31],
-        [2166600 * UYU, 0.27],
-        [1299960 * UYU, 0.25],
-        [649980 * UYU, 0.24],
-        [433320 * UYU, 0.15],
-        [303324 * UYU, 0.10],
+        [442465 * UYU, 0.36],
+        [288564 * UYU, 0.31],
+        [192376 * UYU, 0.27],
+        [115426 * UYU, 0.25],
+        [57713 * UYU, 0.24],
+        [38475 * UYU, 0.15],
+        [26933 * UYU, 0.10],
     ];
 
     var au = [
