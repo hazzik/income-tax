@@ -120,6 +120,11 @@ window.onload = function () {
         [13500 * CHF, 0.02]
     ];
 
+    //https://www.emta.ee/eng/business-client/income-expenses-supply-profits/tax-rates
+    var ee = [
+        [0 * EUR, 0.2]
+    ];
+
     //https://nl.wikipedia.org/wiki/Box_1#Schijventarief_2018
     var nl = [
         [68507 * EUR, 0.5195],
@@ -200,6 +205,25 @@ window.onload = function () {
                 return tax(x, nl);
             },
             borderColor: "#EFBEFA",
+            data: [],
+            fill: false
+        },
+        {
+            label: "Estonia",
+            function: function (x) {
+                // https://www.emta.ee/eng/private-client/declaration-income/amount-tax-free-income-beginning-1-january-2018
+                var exemption;
+                var xEUR = x / EUR;
+                if (xEUR < 14400) {
+                    exemption = 6000;
+                } else if (xEUR < 25200) {
+                    exemption = 6000 - 6000 / 10800 * (xEUR - 14400);
+                } else {
+                    exemption = 0;
+                }
+                return tax(x - exemption * EUR, ee);
+            },
+            borderColor: "black",
             data: [],
             fill: false
         }]
