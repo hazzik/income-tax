@@ -193,6 +193,7 @@ window.onload = function () {
         [0 * ARS, 0.05],
     ];
 
+    //http://taxsummaries.pwc.com/uk/taxsummaries/wwts.nsf/ID/Slovenia-Individual-Taxes-on-personal-income
     var sl = [
         [70907.20 * EUR, 0.50],
         [48000.00 * EUR, 0.39],
