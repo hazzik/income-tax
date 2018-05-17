@@ -295,7 +295,7 @@ window.onload = function () {
         options: {
             legend: {
                 display: true,
-                position: 'right'
+                position: 'bottom'
             },
             tooltips: {
                 callbacks: {
