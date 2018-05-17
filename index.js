@@ -345,7 +345,17 @@ window.onload = function () {
         {
             label: "Slovenia",
             function: function (x) {
-                return tax(x, sl);
+                //http://taxsummaries.pwc.com/ID/Slovenia-Individual-Deductions
+                var xUER = x / EUR;
+                var allowance;
+                if (xUER < 11166.37) {
+                    allowance = 6519.82;
+                } else if (xEUR < 12,570.89) {
+                    allowance = 4418.64;
+                } else {
+                    allowance = 3302.70;
+                }
+                return tax(x - allowance * EUR, sl);
             },
             borderColor: "#B8F0C9",
             data: [],
