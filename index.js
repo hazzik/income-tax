@@ -49,7 +49,7 @@ window.onload = function () {
     ];
     //http://www.sii.cl/aprenda_sobre_impuestos/impuestos/imp_directos.htm#o2p3
     var cl = [
-        [150 * CL_UTA, 0.400],
+        //[150 * CL_UTA, 0.400], // This rate is only for "el Presidente de la Republica, los Ministros de Estado, los Subsecretarios, los Senadores y Diputados"
         [120 * CL_UTA, 0.355],
         [90 * CL_UTA, 0.304],
         [70 * CL_UTA, 0.230],
