@@ -1,7 +1,7 @@
 var NZD = 0.69;
 var AUD = 0.75;
-var CLP = 1 / 631.19; var CLP_UTA = 570456 * CLP;
-var UYU = 1 / 31.13;
+var CLP = 1 / 631.19; var CL_UTA = 570456 * CLP;
+var UYU = 1 / 31.13; var UY_BPC = 3848 * UYU;
 var CAD = 0.78;
 var EUR = 1.18;
 
@@ -14,23 +14,23 @@ window.onload = function () {
     ];
     //http://www.sii.cl/aprenda_sobre_impuestos/impuestos/imp_directos.htm#o2p3
     var cl = [
-        [150 * CLP_UTA, 0.400],
-        [120 * CLP_UTA, 0.355],
-        [90 * CLP_UTA, 0.304],
-        [70 * CLP_UTA, 0.230],
-        [50 * CLP_UTA, 0.135],
-        [30 * CLP_UTA, 0.080],
-        [13.5 * CLP_UTA, 0.040]
+        [150 * CL_UTA, 0.400],
+        [120 * CL_UTA, 0.355],
+        [90 * CL_UTA, 0.304],
+        [70 * CL_UTA, 0.230],
+        [50 * CL_UTA, 0.135],
+        [30 * CL_UTA, 0.080],
+        [13.5 * CL_UTA, 0.040]
     ];
-    //http://ahorrar.com.uy/finanzas/impuestos/franjas-del-irpf-2018-en-uruguay/
+    //http://www.dgi.gub.uy/wdgi/page?2,personas,personas-irpf--rentas-de-trabajo-dependiente-escalas-y-alicuotas,O,es,0,
     var uy = [
-        [442465 * 12 * UYU, 0.36],
-        [288564 * 12 * UYU, 0.31],
-        [192376 * 12 * UYU, 0.27],
-        [115426 * 12 * UYU, 0.25],
-        [57713 * 12 * UYU, 0.24],
-        [38475 * 12 * UYU, 0.15],
-        [26933 * 12 * UYU, 0.10],
+        [1380 * UY_BPC, 0.36],
+        [900 * UY_BPC, 0.31],
+        [600 * UY_BPC, 0.27],
+        [360 * UY_BPC, 0.25],
+        [180 * UY_BPC, 0.24],
+        [120 * UY_BPC, 0.15],
+        [84 * UY_BPC, 0.10],
     ];
 
     var au = [
