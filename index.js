@@ -346,11 +346,11 @@ window.onload = function () {
             label: "Slovenia",
             function: function (x) {
                 //http://taxsummaries.pwc.com/ID/Slovenia-Individual-Deductions
-                var xUER = x / EUR;
+                var xEUR = x / EUR;
                 var allowance;
-                if (xUER < 11166.37) {
+                if (xEUR < 11166.37) {
                     allowance = 6519.82;
-                } else if (xEUR < 12,570.89) {
+                } else if (xEUR < 12570.89) {
                     allowance = 4418.64;
                 } else {
                     allowance = 3302.70;
