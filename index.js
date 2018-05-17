@@ -193,6 +193,14 @@ window.onload = function () {
         [0 * ARS, 0.05],
     ];
 
+    var sl = [
+        [70907.20 * EUR, 0.50],
+        [48000.00 * EUR, 0.39],
+        [20400.00 * EUR, 0.34],
+        [8021.34 * EUR, 0.27],
+        [0 * EUR, 0.16]
+    ];
+
     var from = parseInt(params['f']) || 0;
     var to = parseInt(params['t']) || 100000;
     var step = (to - from) / 50;
@@ -330,6 +338,15 @@ window.onload = function () {
                 return tax(x, ar);
             },
             borderColor: "#DC92D5",
+            data: [],
+            fill: false
+        },
+        {
+            label: "Slovenia",
+            function: function (x) {
+                return tax(x, sl);
+            },
+            borderColor: "#B8F0C9",
             data: [],
             fill: false
         }]
