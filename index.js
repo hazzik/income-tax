@@ -130,7 +130,7 @@ window.onload = function () {
 
     var from = parseInt(params['f']) || 0;
     var to = parseInt(params['t']) || 100000;
-    var step = (to - from) / 50;
+    var step = (to - from) / 25;
 
     var labels = [];
     for (var l = from; l <= to; l += step) {
