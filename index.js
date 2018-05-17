@@ -7,6 +7,7 @@ var EUR = 1.18;
 
 function parseQueryString(queryString) {
     var params = {};
+    var queries = queryString.split('&');
     for (var i = 0, l = queries.length; i < queries.length; i++) {
         var temp = queries[i].split('=');
         params[temp[0]] = temp[1];
