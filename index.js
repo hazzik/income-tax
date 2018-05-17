@@ -1,6 +1,6 @@
 var NZD = 0.69;
 var AUD = 0.75;
-var CLP = 1 / 631.19; var CLP_UTA = 570.456 * CLP;
+var CLP = 1 / 631.19; var CLP_UTA = 570456 * CLP;
 var UYU = 1 / 31.13;
 var CAD = 0.78;
 
