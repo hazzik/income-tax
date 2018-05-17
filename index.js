@@ -264,7 +264,7 @@ window.onload = function () {
             label: "Singapore",
             function: function (x) {
                 var t = tax(x, sg);
-                return t - Math.max(t * 0.2, 500 / SG);
+                return t - Math.min(t * 0.2, 500 / SG);
             },
             borderColor: "#E932EA",
             data: [],
