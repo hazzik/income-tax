@@ -186,7 +186,7 @@ window.onload = function () {
             fill: false
         },
         {
-            label: "Swiss (Zurich, Couple with Kids)",
+            label: "Switzerland (Zurich, Couple with Kids)",
             function: function (x) {
                 return tax(x, ch) + 1.19 * tax(x, ch_zurich);
             },
