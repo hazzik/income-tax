@@ -171,6 +171,14 @@ window.onload = function () {
         [150000 * THB, 0.05]
     ];
 
+    //http://www.taxsummaries.pwc.com/ID/Indonesia-Individual-Taxes-on-personal-income
+    var id = [
+        [500000000 * IDR, 0.30],
+        [250000000 * IDR, 0.25],
+        [50000000 * IDR, 0.15],
+        [0 * IDR, 0.05],
+    ];
+
     var from = parseInt(params['f']) || 0;
     var to = parseInt(params['t']) || 100000;
     var step = (to - from) / 50;
@@ -290,6 +298,15 @@ window.onload = function () {
                 return tax(x, th);
             },
             borderColor: "#D7D88F",
+            data: [],
+            fill: false
+        },
+        {
+            label: "Indonesia",
+            function: function (x) {
+                return tax(x, id);
+            },
+            borderColor: "#DDD907",
             data: [],
             fill: false
         }]
