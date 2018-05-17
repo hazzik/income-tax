@@ -116,6 +116,14 @@ window.onload = function () {
         [13500 * CHF, 0.02]
     ];
 
+    //https://nl.wikipedia.org/wiki/Box_1#Schijventarief_2018
+    var nl = [
+        [68507 * EUR, 0.5195],
+        [33994 * EUR, 0.4085],
+        [20142 * EUR, 0.132 + 0.2765],
+        [0 * EUR, 0.089 + 0.2765]
+    ];
+
     var from = parseInt(params['f']) || 0;
     var to = parseInt(params['t']) || 100000;
     var step = parseInt(params['s']) || 2000;
@@ -177,6 +185,15 @@ window.onload = function () {
             label: "Swiss (Zurich, Couple with Kids)",
             function: function (x) {
                 return tax(x, ch) + 1.19 * tax(x, ch_zurich);
+            },
+            borderColor: "red",
+            data: [],
+            fill: false
+        },
+        {
+            label: "Netherlands (including AOW-min)",
+            function: function (x) {
+                return tax(x, nl);
             },
             borderColor: "red",
             data: [],
