@@ -1,12 +1,4 @@
-var NZD = 0.69;
-var AUD = 0.75;
-var CLP = 1 / 631.19; var CL_UTA = 570456 * CLP;
-var UYU = 1 / 31.13; var UY_BPC = 3848 * UYU;
-var CAD = 0.78;
-var EUR = 1.18;
-var HKD = 1 / 7.85;
-var SGD = 0.75;
-var CHF = 1.00;
+
 
 function parseQueryString(queryString) {
     var params = {};
@@ -16,6 +8,17 @@ function parseQueryString(queryString) {
         params[temp[0]] = temp[1];
     }
     return params;
+}
+
+function setRates(data) {
+    for (var key in data.rates) {
+        if (data.rates.hasOwnProperty(key)) {
+            var rate = data.rates[key];
+            window[key] = 1/rate;
+        }
+    }
+    window.UY_BPC = 3848 * UYU;
+    window.CL_UTA = 570456 * CLP;
 }
 
 function tax(x, brakes) {
