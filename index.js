@@ -195,7 +195,7 @@ window.onload = function () {
             function: function (x) {
                 return tax(x, nl);
             },
-            borderColor: "red",
+            borderColor: "green",
             data: [],
             fill: false
         }]
