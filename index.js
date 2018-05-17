@@ -28,6 +28,10 @@ function tax(x, brakes) {
     return t;
 }
 
+function formatCurrency(c) {
+    return '$' + c.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 var params = parseQueryString(window.location.search.substring(1));
 
 window.onload = function () {
@@ -219,10 +223,34 @@ window.onload = function () {
         type: 'line',
         data: data,
         options: {
+            tooltips: {
+                callbacks: {
+                    label: function(tooltipItem, data) {
+                        var label = data.datasets[tooltipItem.datasetIndex].label || '';
+                        var xLabel = data.labels[tooltipItem.index];
+                        if (label) {
+                            label += ': ';
+                        }
+                        label += formatCurrency(tooltipItem.yLabel) + ' (' + (100*tooltipItem.yLabel/xLabel).toFixed(2) + '%)';
+                        return label;
+                    }
+                }
+            },
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero: true
+                        beginAtZero: true,
+                        callback: function(label, index, labels) {
+                            return formatCurrency(label);
+                        }
+                    }
+                }],
+                xAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        callback: function(label, index, labels) {
+                            return formatCurrency(label);
+                        }
                     }
                 }]
             }
