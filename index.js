@@ -213,7 +213,17 @@ window.onload = function () {
         [50000 * MYR, 0.16],
         [35000 * MYR, 0.10],
         [20000 * MYR, 0.05],
-        [5000 * MYR, 0.01],
+        [5000 * MYR, 0.01]
+    ];
+
+    //http://taxsummaries.pwc.com/ID/Korea-Individual-Taxes-on-personal-income
+    var kr = [
+        [500000 * 1000 * KRW, 0.40],
+        [150000 * 1000 * KRW, 0.38],
+        [88000 * 1000 * KRW, 0.35],
+        [46000 * 1000 * KRW, 0.24],
+        [12000 * 1000 * KRW, 0.15],
+        [0 * 1000 * KRW, 0.06],
     ];
 
     var from = Math.max(parseInt(params['f']) || 0, 0);
@@ -365,6 +375,14 @@ window.onload = function () {
             label: "Malaysia",
             function: function (x) {
                 return tax(x, my);
+            },
+            data: [],
+            fill: false
+        },
+        {
+            label: "Republic of Korea",
+            function: function (x) {
+                return tax(x, kr);
             },
             data: [],
             fill: false
