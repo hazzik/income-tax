@@ -203,8 +203,8 @@ window.onload = function () {
     ];
 
     var from = parseInt(params['f']) || 0;
-    var to = parseInt(params['t']) || 100000;
-    var step = (to - from) / 50;
+    var to = parseInt(params['t']) || (from + 100000);
+    var step = Math.min((to - from) / 50, 1);
 
     var labels = [];
     for (var l = from; l <= to; l += step) {
