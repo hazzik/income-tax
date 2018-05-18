@@ -202,7 +202,7 @@ window.onload = function () {
         [0 * EUR, 0.16]
     ];
 
-    var from = Math.min(parseInt(params['f']), 0);
+    var from = Math.max(parseInt(params['f']), 0);
     var to = parseInt(params['t']) || (from + 100000);
     var step = Math.max((to - from) / 50, 1);
 
