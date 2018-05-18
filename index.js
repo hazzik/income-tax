@@ -219,7 +219,6 @@ window.onload = function () {
             function: function (x) {
                 return tax(x, nz);
             },
-            borderColor: "rgba(75, 192, 192, 1)",
             data: [],
             fill: false
         },
@@ -228,7 +227,6 @@ window.onload = function () {
             function: function (x) {
                 return tax(x, cl);
             },
-            borderColor: "rgba(153, 102, 255, 1)",
             data: [],
             fill: false
         },
@@ -237,7 +235,6 @@ window.onload = function () {
             function: function (x) {
                 return tax(x, uy);
             },
-            borderColor: "blue",
             data: [],
             fill: false
         },
@@ -246,7 +243,6 @@ window.onload = function () {
             function: function (x) {
                 return tax(x, au);
             },
-            borderColor: "green",
             data: [],
             fill: false
         },
@@ -255,7 +251,6 @@ window.onload = function () {
             function: function (x) {
                 return tax(x, ca) + tax(x, ca_ontario);
             },
-            borderColor: "#ECA18D",
             data: [],
             fill: false
         },
@@ -264,7 +259,6 @@ window.onload = function () {
             function: function (x) {
                 return tax(x, ch) + 1.19 * tax(x, ch_zurich);
             },
-            borderColor: "red",
             data: [],
             fill: false
         },
@@ -273,7 +267,6 @@ window.onload = function () {
             function: function (x) {
                 return tax(x, nl);
             },
-            borderColor: "#EFBEFA",
             data: [],
             fill: false
         },
@@ -292,7 +285,6 @@ window.onload = function () {
                 }
                 return tax(x - exemption * EUR, ee);
             },
-            borderColor: "black",
             data: [],
             fill: false
         },
@@ -301,7 +293,6 @@ window.onload = function () {
             function: function (x) {
                 return tax(x, hk);
             },
-            borderColor: "#78324A",
             data: [],
             fill: false
         },
@@ -311,7 +302,6 @@ window.onload = function () {
                 var t = tax(x, sg);
                 return t - Math.min(t * 0.2, 500 / SGD);
             },
-            borderColor: "#E932EA",
             data: [],
             fill: false
         },
@@ -320,7 +310,6 @@ window.onload = function () {
             function: function (x) {
                 return tax(x, th);
             },
-            borderColor: "#D7D88F",
             data: [],
             fill: false
         },
@@ -329,7 +318,6 @@ window.onload = function () {
             function: function (x) {
                 return tax(x, id);
             },
-            borderColor: "#DDD907",
             data: [],
             fill: false
         },
@@ -338,7 +326,6 @@ window.onload = function () {
             function: function (x) {
                 return tax(x, ar);
             },
-            borderColor: "#DC92D5",
             data: [],
             fill: false
         },
@@ -357,7 +344,6 @@ window.onload = function () {
                 }
                 return tax(x - allowance * EUR, sl);
             },
-            borderColor: "#B8F0C9",
             data: [],
             fill: false
         }]
@@ -373,6 +359,16 @@ window.onload = function () {
                         y = fct(x);
                     data.datasets[i].data.push(y);
                 }
+            }
+        }
+    });
+
+    Chart.pluginService.register({
+        beforeInit: function (chart) {
+            var datasets = chart.config.data.datasets;
+            var colors = palette('mpn65', datasets.length);
+            for (var i = 0; i < datasets.length; i++) {
+                datasets[i].borderColor = '#' + colors[i];
             }
         }
     });
