@@ -202,6 +202,20 @@ window.onload = function () {
         [0 * EUR, 0.16]
     ];
 
+    //http://taxsummaries.pwc.com/ID/Malaysia-Individual-Taxes-on-personal-income
+    var my = [
+        [1000000 * MYR, 0.28],
+        [600000 * MYR, 0.26],
+        [400000 * MYR, 0.25],
+        [250000 * MYR, 0.245],
+        [100000 * MYR, 0.24],
+        [70000 * MYR, 0.21],
+        [50000 * MYR, 0.16],
+        [35000 * MYR, 0.10],
+        [20000 * MYR, 0.05],
+        [5000 * MYR, 0.01],
+    ];
+
     var from = Math.max(parseInt(params['f']) || 0, 0);
     var to = parseInt(params['t']) || (from + 100000);
     var step = Math.max((to - from) / 50, 1);
@@ -343,6 +357,14 @@ window.onload = function () {
                     allowance = 3302.70;
                 }
                 return tax(x - allowance * EUR, sl);
+            },
+            data: [],
+            fill: false
+        },
+        {
+            label: "Malaysia",
+            function: function (x) {
+                return tax(x, my);
             },
             data: [],
             fill: false
