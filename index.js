@@ -68,6 +68,7 @@ window.onload = function () {
         [84 * UY_BPC, 0.10],
     ];
 
+    //https://www.ato.gov.au/Rates/Individual-income-tax-rates/
     var au = [
         [180000 * AUD, 0.450],
         [90000 * AUD, 0.370],
