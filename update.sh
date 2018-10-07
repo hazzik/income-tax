@@ -1,0 +1,1 @@
+curl "https://openexchangerates.org/api/latest.json?&callback=setRates&app_id=$1" > rates.js
