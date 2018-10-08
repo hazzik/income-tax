@@ -227,6 +227,11 @@ window.onload = function () {
         [0 * 1000 * KRW, 0.06],
     ];
 
+    var pl = [
+        [85528 * PLN, 0.32],
+        [0 * PLN, 0.18],
+    ]
+
     var from = Math.max(parseInt(params['f']) || 0, 0);
     var to = parseInt(params['t']) || (from + 100000);
     var step = Math.max((to - from) / 50, 1);
@@ -384,6 +389,14 @@ window.onload = function () {
             label: "Republic of Korea",
             function: function (x) {
                 return tax(x, kr);
+            },
+            data: [],
+            fill: false
+        },
+        {
+            label: "Poland",
+            function: function (x) {
+                return tax(x, pl);
             },
             data: [],
             fill: false
