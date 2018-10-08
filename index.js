@@ -410,8 +410,8 @@ window.onload = function () {
                 } else {
                     allowance = 0;
                 }
-                
-                return tax(x, pl) - allowance;
+
+                return Math.max(tax(x, pl) - allowance, 0);
             },
             data: [],
             fill: false
