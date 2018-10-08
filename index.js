@@ -396,7 +396,22 @@ window.onload = function () {
         {
             label: "Poland",
             function: function (x) {
-                return tax(x, pl);
+                //http://taxsummaries.pwc.com/ID/Poland-Individual-Other-tax-credits-and-incentives
+                var xPLN = x / PLN;
+                var allowance;
+                if (xPLN < 8000) {
+                    allowance = 1440;
+                } else if (xPLN < 13000) {
+                    allowance = 1440 - 883.98 * (xPLN - 8000) / 5000;
+                } else if (xPLN < 85258) {
+                    allowance = 556.02;
+                } else if (xPLN < 127000) {
+                    allowance = 556.02 - 556.02 * (xPLN - 85528) / 41472;
+                } else {
+                    allowance = 0;
+                }
+                
+                return tax(x, pl) - allowance;
             },
             data: [],
             fill: false
