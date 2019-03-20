@@ -151,12 +151,12 @@ window.onload = function () {
         [0 * HKD, 0.02]
     ];
 
-    //https://nl.wikipedia.org/wiki/Box_1#Schijventarief_2018
+    //https://nl.wikipedia.org/wiki/Box_1#Schijventarief_2019
     var nl = [
-        [68507 * EUR, 0.5195],
-        [33994 * EUR, 0.4085],
-        [20142 * EUR, 0.132 + 0.2765],
-        [0 * EUR, 0.089 + 0.2765]
+        [68507 * EUR, 0.5175],
+        [34300 * EUR, 0.381],
+        [20384 * EUR, 0.1045 + 0.2765],
+        [0 * EUR, 0.09 + 0.2765]
     ];
 
     var sg = [
