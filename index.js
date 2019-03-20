@@ -194,14 +194,14 @@ window.onload = function () {
     //http://www.taxsummaries.pwc.com/ID/Argentina-Individual-Taxes-on-personal-income
     //Based on the numbers it seems that this is based on some sort of "minimal income" or similar
     var ar = [
-        [412064 * ARS, 0.35],
-        [309048 * ARS, 0.31],
-        [206032 * ARS, 0.27],
-        [154524 * ARS, 0.23],
-        [103016 * ARS, 0.19],
-        [77262 * ARS, 0.15],
-        [51508 * ARS, 0.12],
-        [25754 * ARS, 0.09],
+        [528636.91 * ARS, 0.35],
+        [396477.68 * ARS, 0.31],
+        [264318.45 * ARS, 0.27],
+        [198238.84 * ARS, 0.23],
+        [132159.23 * ARS, 0.19],
+        [99119.42 * ARS, 0.15],
+        [66079.61 * ARS, 0.12],
+        [33039.81 * ARS, 0.09],
         [0 * ARS, 0.05],
     ];
 
