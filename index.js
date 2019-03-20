@@ -230,7 +230,8 @@ window.onload = function () {
 
     //http://taxsummaries.pwc.com/ID/Korea-Individual-Taxes-on-personal-income
     var kr = [
-        [500000 * 1000 * KRW, 0.40],
+        [500000 * 1000 * KRW, 0.42],
+        [300000 * 1000 * KRW, 0.40],
         [150000 * 1000 * KRW, 0.38],
         [88000 * 1000 * KRW, 0.35],
         [46000 * 1000 * KRW, 0.24],
