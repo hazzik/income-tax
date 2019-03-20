@@ -205,7 +205,7 @@ window.onload = function () {
         [0 * ARS, 0.05],
     ];
 
-    //http://taxsummaries.pwc.com/uk/taxsummaries/wwts.nsf/ID/Slovenia-Individual-Taxes-on-personal-income
+    //http://taxsummaries.pwc.com/ID/Slovenia-Individual-Taxes-on-personal-income
     var sl = [
         [70907.20 * EUR, 0.50],
         [48000.00 * EUR, 0.39],
@@ -222,9 +222,9 @@ window.onload = function () {
         [250000 * MYR, 0.245],
         [100000 * MYR, 0.24],
         [70000 * MYR, 0.21],
-        [50000 * MYR, 0.16],
-        [35000 * MYR, 0.10],
-        [20000 * MYR, 0.05],
+        [50000 * MYR, 0.14],
+        [35000 * MYR, 0.08],
+        [20000 * MYR, 0.03],
         [5000 * MYR, 0.01]
     ];
 
