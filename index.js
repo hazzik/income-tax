@@ -79,22 +79,22 @@ window.onload = function () {
 
     //https://www.canada.ca/en/revenue-agency/services/tax/individuals/frequently-asked-questions-individuals/canadian-income-tax-rates-individuals-current-previous-years.html
     var ca = [
-        [205842 * CAD, 0.33],
-        [144489 * CAD, 0.29],
-        [93208 * CAD, 0.26],
-        [46605 * CAD, 0.205],
+        [210371 * CAD, 0.33],
+        [147667 * CAD, 0.29],
+        [95259 * CAD, 0.26],
+        [47630 * CAD, 0.205],
         [0 * CAD, 0.15],
     ];
 
     var ca_ontario = [
         [220000 * CAD, 0.1316],
         [150000 * CAD, 0.1216],
-        [85923 * CAD, 0.1116],
-        [42960 * CAD, 0.0915],
+        [87813 * CAD, 0.1116],
+        [43906 * CAD, 0.0915],
         [0 * CAD, 0.0505]
     ];
 
-    //http://taxsummaries.pwc.com/uk/taxsummaries/wwts.nsf/ID/Switzerland-Individual-Taxes-on-personal-income
+    //http://taxsummaries.pwc.com/ID/Switzerland-Individual-Taxes-on-personal-income
     var ch = [
         [895800 * CHF, 0.115],
         [145000 * CHF, 0.13],
