@@ -131,6 +131,17 @@ window.onload = function () {
         [0 * EUR, 0.2]
     ];
 
+    //http://taxsummaries.pwc.com/ID/Austria-Individual-Taxes-on-personal-income
+    var at = [
+        [1000000 * EUR, 0.55],
+        [90001 * EUR, 0.50],
+        [60001 * EUR, 0.48],
+        [30001 * EUR, 0.42],
+        [18001 * EUR, 0.35],
+        [11001 * EUR, 0.25],
+        [11001 * EUR, 0],
+    ];
+
     //https://www.gov.hk/en/residents/taxes/taxfiling/taxrates/salariesrates.htm
     var hk = [
         [200000 * HKD, 0.17],
@@ -250,7 +261,8 @@ window.onload = function () {
                 return tax(x, nz);
             },
             data: [],
-            fill: false
+            fill: false,
+            hidden: true
         },
         {
             label: "Chile",
@@ -258,7 +270,8 @@ window.onload = function () {
                 return tax(x, cl);
             },
             data: [],
-            fill: false
+            fill: false,
+            hidden: true
         },
         {
             label: "Uruguay",
@@ -266,7 +279,8 @@ window.onload = function () {
                 return tax(x, uy);
             },
             data: [],
-            fill: false
+            fill: false,
+            hidden: true
         },
         {
             label: "Australia",
@@ -274,7 +288,8 @@ window.onload = function () {
                 return tax(x, au);
             },
             data: [],
-            fill: false
+            fill: false,
+            hidden: true
         },
         {
             label: "Canada (Ontario)",
@@ -282,7 +297,8 @@ window.onload = function () {
                 return tax(x, ca) + tax(x, ca_ontario);
             },
             data: [],
-            fill: false
+            fill: false,
+            hidden: true
         },
         {
             label: "Switzerland (Zurich, Couple with Kids)",
@@ -290,7 +306,8 @@ window.onload = function () {
                 return tax(x, ch) + 1.19 * tax(x, ch_zurich);
             },
             data: [],
-            fill: false
+            fill: false,
+            hidden: true
         },
         {
             label: "Netherlands (including AOW-min)",
@@ -298,7 +315,8 @@ window.onload = function () {
                 return tax(x, nl);
             },
             data: [],
-            fill: false
+            fill: false,
+            hidden: true
         },
         {
             label: "Estonia",
@@ -316,7 +334,8 @@ window.onload = function () {
                 return tax(x - exemption * EUR, ee);
             },
             data: [],
-            fill: false
+            fill: false,
+            hidden: true
         },
         {
             label: "Hong Kong",
@@ -324,7 +343,8 @@ window.onload = function () {
                 return tax(x, hk);
             },
             data: [],
-            fill: false
+            fill: false,
+            hidden: true
         },
         {
             label: "Singapore",
@@ -333,7 +353,8 @@ window.onload = function () {
                 return t - Math.min(t * 0.2, 500 / SGD);
             },
             data: [],
-            fill: false
+            fill: false,
+            hidden: true
         },
         {
             label: "Thailand",
@@ -341,7 +362,9 @@ window.onload = function () {
                 return tax(x, th);
             },
             data: [],
-            fill: false
+            fill: false,
+            hidden: true,
+            hidden: true
         },
         {
             label: "Indonesia",
@@ -349,7 +372,8 @@ window.onload = function () {
                 return tax(x, id);
             },
             data: [],
-            fill: false
+            fill: false,
+            hidden: true
         },
         {
             label: "Argentina",
@@ -357,7 +381,8 @@ window.onload = function () {
                 return tax(x, ar);
             },
             data: [],
-            fill: false
+            fill: false,
+            hidden: true
         },
         {
             label: "Slovenia",
@@ -375,7 +400,8 @@ window.onload = function () {
                 return tax(x - allowance * EUR, sl);
             },
             data: [],
-            fill: false
+            fill: false,
+            hidden: true
         },
         {
             label: "Malaysia",
@@ -383,7 +409,8 @@ window.onload = function () {
                 return tax(x, my);
             },
             data: [],
-            fill: false
+            fill: false,
+            hidden: true
         },
         {
             label: "Republic of Korea",
@@ -391,7 +418,8 @@ window.onload = function () {
                 return tax(x, kr);
             },
             data: [],
-            fill: false
+            fill: false,
+            hidden: true
         },
         {
             label: "Poland",
@@ -414,7 +442,17 @@ window.onload = function () {
                 return Math.max(tax(x, pl) - allowance, 0);
             },
             data: [],
-            fill: false
+            fill: false,
+            hidden: true
+        },
+        {
+            label: "Austria",
+            function: function (x) {
+                return tax(x, at);
+            },
+            data: [],
+            fill: false,
+            hidden: true
         }]
     };
 
