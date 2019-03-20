@@ -138,8 +138,7 @@ window.onload = function () {
         [60001 * EUR, 0.48],
         [30001 * EUR, 0.42],
         [18001 * EUR, 0.35],
-        [11001 * EUR, 0.25],
-        [11001 * EUR, 0],
+        [11001 * EUR, 0.25]
     ];
 
     //https://www.gov.hk/en/residents/taxes/taxfiling/taxrates/salariesrates.htm
