@@ -17,8 +17,9 @@ function setRates(data) {
             window[key] = 1 / rate;
         }
     }
-    window.UY_BPC = 3848 * UYU;
-    window.CL_UTA = 570456 * CLP;
+    window.UY_BPC = 4154 * UYU;
+    //http://www.sii.cl/valores_y_fechas/utm/utm2019.htm
+    window.CL_UTA = 580236 * CLP;
 }
 
 function tax(x, brakes) {
