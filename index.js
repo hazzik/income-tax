@@ -457,7 +457,7 @@ window.onload = function () {
             hidden: true
         },
         {
-            lablel: 'Germany',
+            label: 'Germany',
             function: function (x) {
                 //https://de.wikipedia.org/wiki/Einkommensteuer_(Deutschland)#Tarif_2019
                 var zvE = x / EUR;
