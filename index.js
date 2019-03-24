@@ -192,6 +192,7 @@ window.onload = function () {
     ];
 
     //http://www.taxsummaries.pwc.com/ID/Argentina-Individual-Taxes-on-personal-income
+    //https://www.afip.gob.ar/genericos/guiavirtual/consultas_detalle.aspx?id=21962436
     //Based on the numbers it seems that this is based on some sort of "minimal income" or similar
     var ar = [
         [528636.91 * ARS, 0.35],
@@ -450,6 +451,31 @@ window.onload = function () {
             label: "Austria",
             function: function (x) {
                 return tax(x, at);
+            },
+            data: [],
+            fill: false,
+            hidden: true
+        },
+        {
+            lablel: 'Germany',
+            function: function (x) {
+                //https://de.wikipedia.org/wiki/Einkommensteuer_(Deutschland)#Tarif_2019
+                var zvE = x / EUR;
+                if (zvE < 9168) {
+                    return 0 * EUR;
+                }
+                if (zvE < 14254) {
+                    var y = (zvE - 9168) / 10000;
+                    return (980.14 * y + 1400) * y * EUR; 
+                }
+                if (zvE < 55960) {
+                    var z = (zvE - 14254) / 10000;
+                    return ((216.16 * z + 2397) * z + 965.58) * EUR;    
+                }
+                if (zvE < 265326) {
+                    return (0.42 * (zvE - 55960) + 14722.30) * EUR;
+                }
+                return (0.45 * (zvE - 265326) + 102656.02) * EUR;
             },
             data: [],
             fill: false,
