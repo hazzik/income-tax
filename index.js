@@ -17,9 +17,10 @@ function setRates(data) {
             window[key] = 1 / rate;
         }
     }
-    window.UY_BPC = 4154 * UYU;
-    //http://www.sii.cl/valores_y_fechas/utm/utm2019.htm
-    window.CL_UTA = 580236 * CLP;
+    //http://www.dgi.gub.uy/wdgi/page?2,personas,personas-irpf--rentas-de-trabajo-dependiente-escalas-y-alicuotas,O,es,0,
+    window.UY_BPC = 4519 * UYU;
+    //http://www.sii.cl/valores_y_fechas/utm/utm2020.htm
+    window.CL_UTA = 604464 * CLP;
 }
 
 function tax(x, brakes) {
@@ -51,22 +52,23 @@ window.onload = function () {
     //http://www.sii.cl/aprenda_sobre_impuestos/impuestos/imp_directos.htm#o2p3
     var cl = [
         //[150 * CL_UTA, 0.400], // This rate is only for "el Presidente de la Republica, los Ministros de Estado, los Subsecretarios, los Senadores y Diputados"
-        [120 * CL_UTA, 0.355],
-        [90 * CL_UTA, 0.304],
-        [70 * CL_UTA, 0.230],
-        [50 * CL_UTA, 0.135],
-        [30 * CL_UTA, 0.080],
+        [ 120 * CL_UTA, 0.355],
+        [  90 * CL_UTA, 0.304],
+        [  70 * CL_UTA, 0.230],
+        [  50 * CL_UTA, 0.135],
+        [  30 * CL_UTA, 0.080],
         [13.5 * CL_UTA, 0.040]
     ];
+
     //http://www.dgi.gub.uy/wdgi/page?2,personas,personas-irpf--rentas-de-trabajo-dependiente-escalas-y-alicuotas,O,es,0,
     var uy = [
         [1380 * UY_BPC, 0.36],
-        [900 * UY_BPC, 0.31],
-        [600 * UY_BPC, 0.27],
-        [360 * UY_BPC, 0.25],
-        [180 * UY_BPC, 0.24],
-        [120 * UY_BPC, 0.15],
-        [84 * UY_BPC, 0.10],
+        [ 900 * UY_BPC, 0.31],
+        [ 600 * UY_BPC, 0.27],
+        [ 360 * UY_BPC, 0.25],
+        [ 180 * UY_BPC, 0.24],
+        [ 120 * UY_BPC, 0.15],
+        [  84 * UY_BPC, 0.10],
     ];
 
     //https://www.ato.gov.au/Rates/Individual-income-tax-rates/
@@ -200,10 +202,10 @@ window.onload = function () {
         [264318.45 * ARS, 0.27],
         [198238.84 * ARS, 0.23],
         [132159.23 * ARS, 0.19],
-        [99119.42 * ARS, 0.15],
-        [66079.61 * ARS, 0.12],
-        [33039.81 * ARS, 0.09],
-        [0 * ARS, 0.05],
+        [ 99119.42 * ARS, 0.15],
+        [ 66079.61 * ARS, 0.12],
+        [ 33039.81 * ARS, 0.09],
+        [        0 * ARS, 0.05],
     ];
 
     //http://taxsummaries.pwc.com/ID/Slovenia-Individual-Taxes-on-personal-income
