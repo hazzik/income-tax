@@ -1,0 +1,35 @@
+name: Update Rates
+
+on:
+  schedule:
+  - cron: "0 2 * * 1-5"
+  workflow_dispatch: 
+
+jobs:
+  update-rates:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: gh-pages
+      
+      - name: Update Rates
+        shell: bash
+        env:
+          OPENEXCHANGERATES_KEY: ${{ secrets.OPENEXCHANGERATES_KEY }}
+        run: |
+          ./update.sh "$OPENEXCHANGERATES_KEY"
+          
+      - name: Commit files
+        run: |
+          git config --local user.email "hazzik@users.noreply.github.com"
+          git config --local user.name "Alexander Zaytsev"
+          git commit -m "Update rates `date`" -a
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          branch: gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }}
