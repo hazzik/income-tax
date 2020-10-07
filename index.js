@@ -49,6 +49,13 @@ window.onload = function () {
         [14000 * NZD, 0.170],
         [0 * NZD, 0.105]
     ];
+    var nz_2021 = [
+        [180000 * NZD, 0.390],
+        [ 70000 * NZD, 0.330],
+        [ 48000 * NZD, 0.300],
+        [ 14000 * NZD, 0.170],
+        [     0 * NZD, 0.105]
+    ];
     //http://www.sii.cl/aprenda_sobre_impuestos/impuestos/imp_directos.htm#o2p3
     var cl = [
         //[150 * CL_UTA, 0.400], // This rate is only for "el Presidente de la Republica, los Ministros de Estado, los Subsecretarios, los Senadores y Diputados"
@@ -74,9 +81,24 @@ window.onload = function () {
     //https://www.ato.gov.au/Rates/Individual-income-tax-rates/
     var au = [
         [180000 * AUD, 0.450],
-        [90000 * AUD, 0.370],
-        [37000 * AUD, 0.325],
-        [18200 * AUD, 0.190]
+        [ 90000 * AUD, 0.370],
+        [ 37000 * AUD, 0.325],
+        [ 18200 * AUD, 0.190]
+    ];
+
+    //https://budget.gov.au/2020-21/content/factsheets/download/tax_fact-sheet.pdf
+    var au_2021 = [
+        [180000 * AUD, 0.450],
+        [120000 * AUD, 0.370],
+        [ 45000 * AUD, 0.325],
+        [ 18200 * AUD, 0.190]
+    ];
+
+    //https://budget.gov.au/2020-21/content/factsheets/download/tax_fact-sheet.pdf
+    var au_2024 = [
+        [200000 * AUD, 0.45],
+        [ 45000 * AUD, 0.30],
+        [ 18200 * AUD, 0.19]
     ];
 
     //https://www.canada.ca/en/revenue-agency/services/tax/individuals/frequently-asked-questions-individuals/canadian-income-tax-rates-individuals-current-previous-years.html
@@ -248,7 +270,7 @@ window.onload = function () {
     ]
 
     var from = Math.max(parseInt(params['f']) || 0, 0);
-    var to = parseInt(params['t']) || (from + 100000);
+    var to = parseInt(params['t']) || (from + 200000);
     var step = Math.max((to - from) / 50, 1);
 
     var labels = [];
@@ -265,8 +287,15 @@ window.onload = function () {
                 return tax(x, nz);
             },
             data: [],
-            fill: false,
-            hidden: true
+            fill: false
+        },
+        {
+            label: "New Zealand (Proposed by Labour)",
+            function: function (x) {
+                return tax(x, nz_2021);
+            },
+            data: [],
+            fill: false
         },
         {
             label: "Chile",
@@ -293,7 +322,22 @@ window.onload = function () {
             },
             data: [],
             fill: false,
-            hidden: true
+        },
+        {
+            label: "Australia 2020/21",
+            function: function (x) {
+                return tax(x, au_2021);
+            },
+            data: [],
+            fill: false,
+        },
+        {
+            label: "Australia 2024/25",
+            function: function (x) {
+                return tax(x, au_2024);
+            },
+            data: [],
+            fill: false,
         },
         {
             label: "Canada (Ontario)",
