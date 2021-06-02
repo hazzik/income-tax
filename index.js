@@ -44,12 +44,6 @@ var params = parseQueryString(window.location.search.substring(1));
 
 window.onload = function () {
     var nz = [
-        [70000 * NZD, 0.330],
-        [48000 * NZD, 0.300],
-        [14000 * NZD, 0.170],
-        [0 * NZD, 0.105]
-    ];
-    var nz_2021 = [
         [180000 * NZD, 0.390],
         [ 70000 * NZD, 0.330],
         [ 48000 * NZD, 0.300],
@@ -81,14 +75,6 @@ window.onload = function () {
     //https://www.ato.gov.au/Rates/Individual-income-tax-rates/
     var au = [
         [180000 * AUD, 0.450],
-        [ 90000 * AUD, 0.370],
-        [ 37000 * AUD, 0.325],
-        [ 18200 * AUD, 0.190]
-    ];
-
-    //https://budget.gov.au/2020-21/content/factsheets/download/tax_fact-sheet.pdf
-    var au_2021 = [
-        [180000 * AUD, 0.450],
         [120000 * AUD, 0.370],
         [ 45000 * AUD, 0.325],
         [ 18200 * AUD, 0.190]
@@ -105,17 +91,17 @@ window.onload = function () {
     var ca = [
         [210371 * CAD, 0.33],
         [147667 * CAD, 0.29],
-        [95259 * CAD, 0.26],
-        [47630 * CAD, 0.205],
-        [0 * CAD, 0.15],
+        [95259  * CAD, 0.26],
+        [47630  * CAD, 0.205],
+        [0      * CAD, 0.15],
     ];
 
     var ca_ontario = [
         [220000 * CAD, 0.1316],
         [150000 * CAD, 0.1216],
-        [87813 * CAD, 0.1116],
-        [43906 * CAD, 0.0915],
-        [0 * CAD, 0.0505]
+        [87813  * CAD, 0.1116],
+        [43906  * CAD, 0.0915],
+        [0      * CAD, 0.0505]
     ];
 
     //http://taxsummaries.pwc.com/ID/Switzerland-Individual-Taxes-on-personal-income
@@ -129,11 +115,11 @@ window.onload = function () {
         [124200 * CHF, 0.08],
         [114700 * CHF, 0.07],
         [103400 * CHF, 0.06],
-        [90300 * CHF, 0.05],
-        [75300 * CHF, 0.04],
-        [58400 * CHF, 0.03],
-        [50900 * CHF, 0.02],
-        [28300 * CHF, 0.01],
+        [90300  * CHF, 0.05],
+        [75300  * CHF, 0.04],
+        [58400  * CHF, 0.03],
+        [50900  * CHF, 0.02],
+        [28300  * CHF, 0.01],
     ];
 
     var ch_zurich = [
@@ -142,13 +128,13 @@ window.onload = function () {
         [224700 * CHF, 0.11],
         [169300 * CHF, 0.10],
         [122900 * CHF, 0.09],
-        [92100 * CHF, 0.08],
-        [61300 * CHF, 0.07],
-        [47400 * CHF, 0.06],
-        [36700 * CHF, 0.05],
-        [27300 * CHF, 0.04],
-        [19600 * CHF, 0.03],
-        [13500 * CHF, 0.02]
+        [92100  * CHF, 0.08],
+        [61300  * CHF, 0.07],
+        [47400  * CHF, 0.06],
+        [36700  * CHF, 0.05],
+        [27300  * CHF, 0.04],
+        [19600  * CHF, 0.03],
+        [13500  * CHF, 0.02]
     ];
 
     //https://www.emta.ee/eng/business-client/income-expenses-supply-profits/tax-rates
@@ -159,11 +145,11 @@ window.onload = function () {
     //http://taxsummaries.pwc.com/ID/Austria-Individual-Taxes-on-personal-income
     var at = [
         [1000000 * EUR, 0.55],
-        [90001 * EUR, 0.50],
-        [60001 * EUR, 0.48],
-        [30001 * EUR, 0.42],
-        [18001 * EUR, 0.35],
-        [11001 * EUR, 0.25]
+        [90001   * EUR, 0.50],
+        [60001   * EUR, 0.48],
+        [30001   * EUR, 0.42],
+        [18001   * EUR, 0.35],
+        [11001   * EUR, 0.25]
     ];
 
     //https://www.gov.hk/en/residents/taxes/taxfiling/taxrates/salariesrates.htm
@@ -171,8 +157,8 @@ window.onload = function () {
         [200000 * HKD, 0.17],
         [150000 * HKD, 0.14],
         [100000 * HKD, 0.10],
-        [50000 * HKD, 0.06],
-        [0 * HKD, 0.02]
+        [50000  * HKD, 0.06],
+        [0      * HKD, 0.02]
     ];
 
     //https://nl.wikipedia.org/wiki/Box_1#Schijventarief_2019
@@ -180,7 +166,7 @@ window.onload = function () {
         [68507 * EUR, 0.5175],
         [34300 * EUR, 0.381],
         [20384 * EUR, 0.1045 + 0.2765],
-        [0 * EUR, 0.09 + 0.2765]
+        [0     * EUR, 0.09 + 0.2765]
     ];
 
     var sg = [
@@ -190,10 +176,10 @@ window.onload = function () {
         [200000 * SGD, 0.190],
         [160000 * SGD, 0.180],
         [120000 * SGD, 0.150],
-        [80000 * SGD, 0.115],
-        [40000 * SGD, 0.070],
-        [30000 * SGD, 0.035],
-        [20000 * SGD, 0.020]
+        [80000  * SGD, 0.115],
+        [40000  * SGD, 0.070],
+        [30000  * SGD, 0.035],
+        [20000  * SGD, 0.020]
     ];
 
     //http://taxsummaries.pwc.com/ID/Thailand-Individual-Taxes-on-personal-income
@@ -201,10 +187,10 @@ window.onload = function () {
         [5000000 * THB, 0.35],
         [2000000 * THB, 0.30],
         [1000000 * THB, 0.25],
-        [750000 * THB, 0.20],
-        [500000 * THB, 0.15],
-        [300000 * THB, 0.10],
-        [150000 * THB, 0.05]
+        [750000  * THB, 0.20],
+        [500000  * THB, 0.15],
+        [300000  * THB, 0.10],
+        [150000  * THB, 0.05]
     ];
 
     //http://www.taxsummaries.pwc.com/ID/Indonesia-Individual-Taxes-on-personal-income
@@ -281,18 +267,11 @@ window.onload = function () {
     var ctx = document.getElementById("myChart");
     var data = {
         labels: labels,
-        datasets: [{
+        datasets: [
+        {
             label: "New Zealand",
             function: function (x) {
                 return tax(x, nz);
-            },
-            data: [],
-            fill: false
-        },
-        {
-            label: "New Zealand (Proposed by Labour)",
-            function: function (x) {
-                return tax(x, nz_2021);
             },
             data: [],
             fill: false
@@ -319,14 +298,6 @@ window.onload = function () {
             label: "Australia",
             function: function (x) {
                 return tax(x, au);
-            },
-            data: [],
-            fill: false,
-        },
-        {
-            label: "Australia 2020/21",
-            function: function (x) {
-                return tax(x, au_2021);
             },
             data: [],
             fill: false,
