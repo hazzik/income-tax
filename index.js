@@ -456,13 +456,13 @@ window.onload = function () {
                 var xPLN = x / PLN;
                 var allowance;
                 if (xPLN < 8000) {
-                    allowance = 1440;
+                    allowance = 1360;
                 } else if (xPLN < 13000) {
-                    allowance = 1440 - 883.98 * (xPLN - 8000) / 5000;
+                    allowance = 1360 - 834.88 * (xPLN - 8000) / 5000;
                 } else if (xPLN < 85258) {
-                    allowance = 556.02;
+                    allowance = 525.12;
                 } else if (xPLN < 127000) {
-                    allowance = 556.02 - 556.02 * (xPLN - 85528) / 41472;
+                    allowance = 525.12 - 525.12 * (xPLN - 85528) / 41472;
                 } else {
                     allowance = 0;
                 }
