@@ -205,15 +205,15 @@ window.onload = function () {
     //https://www.afip.gob.ar/genericos/guiavirtual/consultas_detalle.aspx?id=21962436
     //Based on the numbers it seems that this is based on some sort of "minimal income" or similar
     var ar = [
-        [528636.91 * ARS, 0.35],
-        [396477.68 * ARS, 0.31],
-        [264318.45 * ARS, 0.27],
-        [198238.84 * ARS, 0.23],
-        [132159.23 * ARS, 0.19],
-        [ 99119.42 * ARS, 0.15],
-        [ 66079.61 * ARS, 0.12],
-        [ 33039.81 * ARS, 0.09],
-        [        0 * ARS, 0.05],
+        [1032522.30 * ARS, 0.35],
+        [ 774391.71 * ARS, 0.31],
+        [ 516261.14 * ARS, 0.27],
+        [ 387195.86 * ARS, 0.23],
+        [ 258130.58 * ARS, 0.19],
+        [ 193597.93 * ARS, 0.15],
+        [ 129065.29 * ARS, 0.12],
+        [  64532.64 * ARS, 0.09],
+        [         0 * ARS, 0.05],
     ];
 
     //http://taxsummaries.pwc.com/ID/Slovenia-Individual-Taxes-on-personal-income
@@ -401,9 +401,12 @@ window.onload = function () {
             hidden: true
         },
         {
-            label: "Argentina",
+            label: "Argentina (Self Employed)",
             function: function (x) {
-                return tax(x, ar);
+                //https://taxsummaries.pwc.com/argentina/individual/deductions
+                var allowance = 167678.40 + 335356.79;
+
+                return tax(x - allowance * ARS, ar);
             },
             data: [],
             fill: false,
