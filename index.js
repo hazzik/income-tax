@@ -255,6 +255,12 @@ window.onload = function () {
         [0 * PLN, 0.18],
     ]
 
+    //https://taxsummaries.pwc.com/czech-republic/individual/taxes-on-personal-income
+    var cz = [
+        [1701168 * CZK, 0.23],
+        [0 * CZK, 0.15],
+    ]
+
     var from = Math.max(parseInt(params['f']) || 0, 0);
     var to = parseInt(params['t']) || (from + 200000);
     var step = Math.max((to - from) / 50, 1);
@@ -497,7 +503,17 @@ window.onload = function () {
             data: [],
             fill: false,
             hidden: true
-        }]
+        }, 
+        {
+            label: "Czech Republic",
+            function: function (x) {
+                return tax(x, cz);
+            },
+            data: [],
+            fill: false,
+            hidden: true
+        },
+]
     };
 
     Chart.pluginService.register({
