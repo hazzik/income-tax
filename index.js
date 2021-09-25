@@ -18,9 +18,9 @@ function setRates(data) {
         }
     }
     //http://www.dgi.gub.uy/wdgi/page?2,personas,personas-irpf--rentas-de-trabajo-dependiente-escalas-y-alicuotas,O,es,0,
-    window.UY_BPC = 4519 * UYU;
-    //http://www.sii.cl/valores_y_fechas/utm/utm2020.htm
-    window.CL_UTA = 604464 * CLP;
+    window.UY_BPC = 4870 * UYU;
+    //http://www.sii.cl/valores_y_fechas/utm/utm2021.htm
+    window.CL_UTA = 634104 * CLP;
 }
 
 function tax(x, brakes) {
