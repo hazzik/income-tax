@@ -507,7 +507,8 @@ window.onload = function () {
         {
             label: "Czech Republic",
             function: function (x) {
-                return tax(x, cz);
+                //https://taxsummaries.pwc.com/czech-republic/individual/other-tax-credits-and-incentives
+                return tax(Math.max(x - 27840 * CZK, 0), cz);
             },
             data: [],
             fill: false,
