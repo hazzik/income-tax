@@ -1,7 +1,7 @@
 setRates({
   "disclaimer": "Usage subject to terms: https://openexchangerates.org/terms",
   "license": "https://openexchangerates.org/license",
-  "timestamp": 1667005209,
+  "timestamp": 1667091607,
   "base": "USD",
   "rates": {
     "AED": 3.673,
@@ -25,7 +25,7 @@ setRates({
     "BOB": 6.914948,
     "BRL": 5.292657,
     "BSD": 1,
-    "BTC": 0.000048532752,
+    "BTC": 0.000048252734,
     "BTN": 82.849449,
     "BWP": 13.378804,
     "BYN": 2.534354,
